@@ -13,11 +13,11 @@ const UserSchema = new Schema({
   },
   password: {
     type: String,
-    required: True
+    required: true
   },
   avatar: {
     Type: String,
-    required: true
+    // required: true
   },
   date: {
     type: Date,
