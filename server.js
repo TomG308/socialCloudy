@@ -3,16 +3,14 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const passport = require('passport')
 
-const user = require('./routes/api/user')
+const user = require('./routes/api/users')
 const profile = require('./routes/api/profile')
 const posts = require('./routes/api/posts')
 
 
 const app = express()
 
-app.use(bodyParser.urlencoded({
-  extended: false
-}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // DB config
@@ -33,7 +31,7 @@ require('./config/passport.js')(passport)
 
 //use routes
 
-app.use('/api/user', user)
+app.use('/api/users', user)
 app.use('/api/profile', profile)
 app.use('/api/posts', posts)
 
